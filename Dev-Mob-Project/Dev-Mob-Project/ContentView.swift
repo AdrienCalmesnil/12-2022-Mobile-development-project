@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var scheduleViewModel: SchedulesViewModel
+    
     var body: some View {
         VStack {
+            List {
+                
+                List(scheduleViewModel.listSchedule, id: \.id)
+                { l in
+                    Text(l.fields.activity!)
+                }
+                 
+            }
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
@@ -21,6 +31,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(scheduleViewModel: SchedulesViewModel())
     }
 }

@@ -14,6 +14,11 @@
 		55AF55592947657D0008878F /* Dev_Mob_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF55582947657D0008878F /* Dev_Mob_ProjectTests.swift */; };
 		55AF55632947657D0008878F /* Dev_Mob_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF55622947657D0008878F /* Dev_Mob_ProjectUITests.swift */; };
 		55AF55652947657D0008878F /* Dev_Mob_ProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF55642947657D0008878F /* Dev_Mob_ProjectUITestsLaunchTests.swift */; };
+		55AF5572294772AD0008878F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 55AF5571294772AD0008878F /* .gitignore */; };
+		55AF5578294784B50008878F /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF5577294784B50008878F /* Records.swift */; };
+		55AF557A294785870008878F /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF5579294785870008878F /* Schedule.swift */; };
+		55AF557D29478BA60008878F /* SchedulesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF557C29478BA60008878F /* SchedulesViewModel.swift */; };
+		55AF558029478E140008878F /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF557F29478E140008878F /* RequestFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		55AF555E2947657D0008878F /* Dev-Mob-ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dev-Mob-ProjectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55AF55622947657D0008878F /* Dev_Mob_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dev_Mob_ProjectUITests.swift; sourceTree = "<group>"; };
 		55AF55642947657D0008878F /* Dev_Mob_ProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dev_Mob_ProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		55AF5571294772AD0008878F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		55AF5577294784B50008878F /* Records.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
+		55AF5579294785870008878F /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		55AF557C29478BA60008878F /* SchedulesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesViewModel.swift; sourceTree = "<group>"; };
+		55AF557F29478E140008878F /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +84,7 @@
 		55AF553B2947657A0008878F = {
 			isa = PBXGroup;
 			children = (
+				55AF5571294772AD0008878F /* .gitignore */,
 				55AF55462947657B0008878F /* Dev-Mob-Project */,
 				55AF55572947657D0008878F /* Dev-Mob-ProjectTests */,
 				55AF55612947657D0008878F /* Dev-Mob-ProjectUITests */,
@@ -94,6 +105,9 @@
 		55AF55462947657B0008878F /* Dev-Mob-Project */ = {
 			isa = PBXGroup;
 			children = (
+				55AF557E29478DFB0008878F /* Utils */,
+				55AF557B29478A880008878F /* ViewModels */,
+				55AF5573294779B50008878F /* Models */,
 				55AF55472947657B0008878F /* Dev_Mob_ProjectApp.swift */,
 				55AF55492947657B0008878F /* ContentView.swift */,
 				55AF554B2947657C0008878F /* Assets.xcassets */,
@@ -125,6 +139,31 @@
 				55AF55642947657D0008878F /* Dev_Mob_ProjectUITestsLaunchTests.swift */,
 			);
 			path = "Dev-Mob-ProjectUITests";
+			sourceTree = "<group>";
+		};
+		55AF5573294779B50008878F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				55AF5577294784B50008878F /* Records.swift */,
+				55AF5579294785870008878F /* Schedule.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		55AF557B29478A880008878F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				55AF557C29478BA60008878F /* SchedulesViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		55AF557E29478DFB0008878F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				55AF557F29478E140008878F /* RequestFactory.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55AF554F2947657C0008878F /* Preview Assets.xcassets in Resources */,
+				55AF5572294772AD0008878F /* .gitignore in Resources */,
 				55AF554C2947657C0008878F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,7 +297,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55AF558029478E140008878F /* RequestFactory.swift in Sources */,
+				55AF5578294784B50008878F /* Records.swift in Sources */,
 				55AF554A2947657B0008878F /* ContentView.swift in Sources */,
+				55AF557D29478BA60008878F /* SchedulesViewModel.swift in Sources */,
+				55AF557A294785870008878F /* Schedule.swift in Sources */,
 				55AF55482947657B0008878F /* Dev_Mob_ProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
