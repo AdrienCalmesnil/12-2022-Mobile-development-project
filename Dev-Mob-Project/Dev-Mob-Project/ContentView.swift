@@ -8,22 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var scheduleViewModel: SchedulesViewModel
+    @ObservedObject var scheduleViewModel: SchedulesViewModel
     
     var body: some View {
         VStack {
-            List {
-                
-                List(scheduleViewModel.listSchedule, id: \.id)
-                { l in
+            List
+            {
+                ForEach(scheduleViewModel.listSchedule) { l in
                     Text(l.fields.activity!)
                 }
-                 
             }
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
         }
         .padding()
     }

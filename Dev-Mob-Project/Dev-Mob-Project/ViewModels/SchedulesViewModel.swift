@@ -7,11 +7,10 @@
 
 import Foundation
 
-class SchedulesViewModel {
-    var listSchedule: [Schedule]
+class SchedulesViewModel : ObservableObject {
+    @Published var listSchedule: [Schedule] = []
     
     init() {
-        listSchedule = []
         self.loadList()
     }
     
@@ -23,9 +22,10 @@ class SchedulesViewModel {
             if let _ = errorHandle.errorType, let errorMessage = errorHandle.errorMessage {
                 print(errorMessage)
             }
-            else if let list = schedules, let schedule = list.last {
-                print(schedule.id)
-                self.listSchedule = list
+            else if let list = schedules {
+                DispatchQueue.main.async {
+                    self.listSchedule = [Schedule](list)
+                }
             }
             else {
                 print("Houston we got a problem")

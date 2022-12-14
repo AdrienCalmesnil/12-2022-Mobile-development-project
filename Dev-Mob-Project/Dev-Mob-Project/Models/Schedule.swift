@@ -8,22 +8,22 @@
 import Foundation
 import UIKit
 
-struct Schedule: Codable {
+struct Schedule: Codable, Identifiable {
     let id: String
-    //let createdTime: MTLTimestamp?
+    let createdTime: Date?
     let fields: Fields
 }
 
 struct Fields: Codable {
-    //let end: MTLTimestamp?
-    //let start: MTLTimestamp?
+    let end: Date?
+    let start: Date?
     let activity: String?
     let type: String?
     //let speakers: [String?]
     let location: String?
     enum CodingKeys: String, CodingKey {
-        //case end = "End"
-        //case start = "Start"
+        case end = "End"
+        case start = "Start"
         case activity = "Activity"
         case type = "Type"
         //case speakers = "Speaker(s)"

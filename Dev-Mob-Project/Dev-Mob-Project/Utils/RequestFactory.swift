@@ -63,7 +63,13 @@ class RequestFactory: RequestFactoryProtocol {
             if let data = data, error == nil {
                 if let responseHttp = response as? HTTPURLResponse {
                     if responseHttp.statusCode == 200 {
-                        if let response = try? JSONDecoder().decode(Records.self, from: data) {
+                        
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                        let decoder = JSONDecoder()
+                        decoder.dateDecodingStrategy = .formatted(dateFormatter)
+                        
+                        if let response = try? decoder.decode(Records.self, from: data) {
                                 callback((nil, nil), response.records)
                         }
                         else {
