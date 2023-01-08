@@ -43,7 +43,7 @@ class SchedulesViewModel : ObservableObject {
     }
 
     func loadType(){
-        var setTypeSchedule: Set<String> = [""]
+        var setTypeSchedule: Set<String> = ["All"]
         for e in self.listSchedule {
             setTypeSchedule.insert(e.fields.type!)
         }
