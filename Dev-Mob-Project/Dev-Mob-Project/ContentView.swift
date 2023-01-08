@@ -12,14 +12,20 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            Text("Welcome to the Technologic congress !").bold().font(.title).multilineTextAlignment(.center)
             List
             {
                 ForEach(scheduleViewModel.listSchedule) { l in
-                    Text(l.fields.activity!)
+     
+                    Text(l.fields.activity!) .padding()
+                    
                 }
             }
+            .scrollContentBackground(.hidden)
+            .background(.orange)
+        
         }
-        .padding()
+        .background(Color.orange)
     }
 }
 
