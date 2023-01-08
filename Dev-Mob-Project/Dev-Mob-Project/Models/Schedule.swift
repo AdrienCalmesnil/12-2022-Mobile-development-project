@@ -8,10 +8,16 @@
 import Foundation
 import UIKit
 
-struct Schedule: Codable, Identifiable {
+class Schedule: Codable, Identifiable, ObservableObject {
     let id: String
     let createdTime: Date?
     let fields: FieldsSchedule
+    
+    init(id: String, createdTime: Date?, fields: FieldsSchedule){
+        self.id = id
+        self.createdTime = createdTime
+        self.fields = fields
+    }
 }
 
 struct FieldsSchedule: Codable {

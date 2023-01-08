@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		555DCE44296B0A9E00771235 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555DCE43296B0A9D00771235 /* Speaker.swift */; };
+		555DCE49296B275400771235 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555DCE48296B275400771235 /* DetailView.swift */; };
 		55AF55482947657B0008878F /* Dev_Mob_ProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF55472947657B0008878F /* Dev_Mob_ProjectApp.swift */; };
 		55AF554A2947657B0008878F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF55492947657B0008878F /* ContentView.swift */; };
 		55AF554C2947657C0008878F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55AF554B2947657C0008878F /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		555DCE43296B0A9D00771235 /* Speaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
+		555DCE48296B275400771235 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		55AF55442947657B0008878F /* Dev-Mob-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dev-Mob-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55AF55472947657B0008878F /* Dev_Mob_ProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dev_Mob_ProjectApp.swift; sourceTree = "<group>"; };
 		55AF55492947657B0008878F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		555DCE47296B273C00771235 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				555DCE48296B275400771235 /* DetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		55AF553B2947657A0008878F = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +117,7 @@
 		55AF55462947657B0008878F /* Dev-Mob-Project */ = {
 			isa = PBXGroup;
 			children = (
+				555DCE47296B273C00771235 /* Views */,
 				55AF557E29478DFB0008878F /* Utils */,
 				55AF557B29478A880008878F /* ViewModels */,
 				55AF5573294779B50008878F /* Models */,
@@ -302,6 +313,7 @@
 			files = (
 				55AF558029478E140008878F /* RequestFactory.swift in Sources */,
 				55AF5578294784B50008878F /* Records.swift in Sources */,
+				555DCE49296B275400771235 /* DetailView.swift in Sources */,
 				55AF554A2947657B0008878F /* ContentView.swift in Sources */,
 				55AF557D29478BA60008878F /* SchedulesViewModel.swift in Sources */,
 				555DCE44296B0A9E00771235 /* Speaker.swift in Sources */,
