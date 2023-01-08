@@ -11,10 +11,10 @@ import UIKit
 struct Schedule: Codable, Identifiable {
     let id: String
     let createdTime: Date?
-    let fields: Fields
+    let fields: FieldsSchedule
 }
 
-struct Fields: Codable {
+struct FieldsSchedule: Codable {
     let end: Date?
     let start: Date?
     let activity: String?

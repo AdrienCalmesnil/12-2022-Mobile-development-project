@@ -9,13 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var scheduleViewModel: SchedulesViewModel
+    @State var selectedItem = ""
     
     var body: some View {
         VStack {
+            Picker("Chosse a type of event",selection: $selectedItem) {
+                ForEach(scheduleViewModel.typeSchedule, id: \.self)
+                { type in
+                    Text(type)
+                }
+            }
+            
             List
             {
                 ForEach(scheduleViewModel.listSchedule) { l in
-                    Text(l.fields.activity!)
+                    if(selectedItem != ""){
+                        if(selectedItem == l.fields.type!){
+                            Text(l.fields.activity!)
+                        }
+                    }
+                    else {
+                        Text(l.fields.activity!)
+                    }
                 }
             }
         }

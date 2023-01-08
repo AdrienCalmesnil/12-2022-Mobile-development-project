@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		555DCE44296B0A9E00771235 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555DCE43296B0A9D00771235 /* Speaker.swift */; };
 		55AF55482947657B0008878F /* Dev_Mob_ProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF55472947657B0008878F /* Dev_Mob_ProjectApp.swift */; };
 		55AF554A2947657B0008878F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF55492947657B0008878F /* ContentView.swift */; };
 		55AF554C2947657C0008878F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55AF554B2947657C0008878F /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		555DCE43296B0A9D00771235 /* Speaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
 		55AF55442947657B0008878F /* Dev-Mob-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dev-Mob-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55AF55472947657B0008878F /* Dev_Mob_ProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dev_Mob_ProjectApp.swift; sourceTree = "<group>"; };
 		55AF55492947657B0008878F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				55AF5577294784B50008878F /* Records.swift */,
 				55AF5579294785870008878F /* Schedule.swift */,
+				555DCE43296B0A9D00771235 /* Speaker.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				55AF5578294784B50008878F /* Records.swift in Sources */,
 				55AF554A2947657B0008878F /* ContentView.swift in Sources */,
 				55AF557D29478BA60008878F /* SchedulesViewModel.swift in Sources */,
+				555DCE44296B0A9E00771235 /* Speaker.swift in Sources */,
 				55AF557A294785870008878F /* Schedule.swift in Sources */,
 				55AF55482947657B0008878F /* Dev_Mob_ProjectApp.swift in Sources */,
 			);
