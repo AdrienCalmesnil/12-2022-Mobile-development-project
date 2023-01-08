@@ -13,6 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            Text("Welcome to the Technologic congress !").bold().font(.title).multilineTextAlignment(.center)
             Picker("Chosse a type of event",selection: $selectedItem) {
                 ForEach(scheduleViewModel.typeSchedule, id: \.self)
                 { type in
@@ -25,16 +26,19 @@ struct ContentView: View {
                 ForEach(scheduleViewModel.listSchedule) { l in
                     if(selectedItem != ""){
                         if(selectedItem == l.fields.type!){
-                            Text(l.fields.activity!)
+                            Text(l.fields.activity!).padding()
                         }
                     }
                     else {
-                        Text(l.fields.activity!)
+                        Text(l.fields.activity!).padding()
                     }
                 }
             }
+            .scrollContentBackground(.hidden)
+            .background(.orange)
+        
         }
-        .padding()
+        .background(Color.orange)
     }
 }
 
