@@ -11,7 +11,7 @@ import SwiftUI
 struct Dev_Mob_ProjectApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(scheduleViewModel: SchedulesViewModel())
         }
     }
 }
