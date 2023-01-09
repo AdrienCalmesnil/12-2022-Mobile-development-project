@@ -10,6 +10,7 @@ import Foundation
 class SchedulesViewModel : ObservableObject {
     @Published var listSchedule: [Schedule] = []
     @Published var typeSchedule: [String] = []
+    @Published var dateSchedule: [String] = []
     
     init() {
         self.loadList()
@@ -32,6 +33,7 @@ class SchedulesViewModel : ObservableObject {
                     }
                     
                     self.loadType()
+                    self.loadDate()
                 }
             }
             else {
@@ -50,6 +52,17 @@ class SchedulesViewModel : ObservableObject {
         self.typeSchedule = Array(setTypeSchedule)
         
         self.typeSchedule.sort { (x: String, y: String) -> Bool in
+            return x < y
+        }
+    }
+    func loadDate(){
+        var setDateSchedule: Set<String> = ["All"]
+        for e in self.listSchedule {
+            setDateSchedule.insert(e.fields.start!.formatted(date: .numeric, time: .omitted))
+        }
+        self.dateSchedule = Array(setDateSchedule)
+        
+        self.dateSchedule.sort { (x: String, y: String) -> Bool in
             return x < y
         }
     }
