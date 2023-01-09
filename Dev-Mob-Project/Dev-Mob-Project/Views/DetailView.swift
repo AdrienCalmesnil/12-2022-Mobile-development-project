@@ -28,12 +28,14 @@ struct DetailView: View {
                 Text("to")
                 Text((schedule.fields.end!), style: .time)
             }
-            VStack(alignment: .leading){
-                Text("Speakers").bold()
-                ForEach(detailViewModel.listSpeaker, id: \.id){ e in
-                    Text(e.fields.name!)
-                }
-            }.padding(.top).padding(.bottom)
+            if (detailViewModel.listSpeaker.count > 0){
+                VStack(alignment: .leading){
+                    Text("Speakers").bold()
+                    ForEach(detailViewModel.listSpeaker, id: \.id){ e in
+                        Text(e.fields.name!)
+                    }
+                }.padding(.top).padding(.bottom)
+            }
             
             if((schedule.fields.notes) != nil){
                 Text("Notes").bold()
