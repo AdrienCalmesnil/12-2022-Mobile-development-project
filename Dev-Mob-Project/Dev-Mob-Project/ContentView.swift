@@ -9,32 +9,40 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var scheduleViewModel: SchedulesViewModel
-    @State var selectedItem = ""
+    @State var selectedItem = "All"
     
     var body: some View {
         NavigationView{
             VStack {
                 Text("Welcome to the Technologic congress !").bold().font(.title).multilineTextAlignment(.center)
-                Picker("Chosse a type of event",selection: $selectedItem) {
-                    ForEach(scheduleViewModel.typeSchedule, id: \.self)
-                    { type in
-                        Text(type)
-                    }
+                HStack{
+                    Text("Chose a type of event :")
+                    Picker("Chose a type of event",selection: $selectedItem) {
+                        ForEach(scheduleViewModel.typeSchedule, id: \.self)
+                        { type in
+                            Text(type)
+                        }
+                    }.background(.white)
                 }
-                
                 List
                 {
                     ForEach(scheduleViewModel.listSchedule) { l in
-                        if(selectedItem != ""){
-                            if(selectedItem == l.fields.type!){
-                                NavigationLink(destination: DetailView(schedule: l)){
-                                    Text(l.fields.activity!).padding()
+                        NavigationLink(destination: DetailView(schedule: l)){
+                            if(selectedItem != "All"){
+                                if(selectedItem == l.fields.type!){
+                                    HStack(alignment: .lastTextBaseline){
+                                        Text(l.fields.activity!).padding()
+                                        Spacer()
+                                        Text((l.fields.start!), style : .time)
+                                    }
                                 }
                             }
-                        }
-                        else {
-                            NavigationLink(destination: DetailView(schedule: l)){
-                                Text(l.fields.activity!).padding()
+                            else {
+                                HStack(alignment: .lastTextBaseline){
+                                    Text(l.fields.activity!).padding()
+                                    Spacer()
+                                    Text((l.fields.start!), style : .time)
+                                }
                             }
                         }
                     }

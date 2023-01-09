@@ -31,9 +31,10 @@ struct DetailView: View {
                 Text("Speaker 1 " + "Speaker 2")
             }.padding(.top).padding(.bottom)
             
-            
-            Text("Notes").bold()
-            Text(schedule.fields.notes!)
+            if((schedule.fields.notes) != nil){
+                Text("Notes").bold()
+                Text(schedule.fields.notes!)
+            }
             Spacer()
         }.frame(maxWidth: .infinity).background(Color.orange)
     }
@@ -41,6 +42,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(schedule: Schedule(id: "0", createdTime: Date.now, fields: FieldsSchedule(end: Date.now, start: Date.now, activity: "N/A", type: "N/A", notes:"N/A", location: "N/A")))
+        DetailView(schedule: Schedule(id: "0", createdTime: Date.now, fields: FieldsSchedule(end: Date.now, start: Date.now, activity: "N/A", type: "N/A", speakers:nil, notes:"N/A", location: "N/A")))
     }
 }
