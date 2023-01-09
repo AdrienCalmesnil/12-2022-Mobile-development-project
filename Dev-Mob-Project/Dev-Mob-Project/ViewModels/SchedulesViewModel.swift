@@ -39,7 +39,6 @@ class SchedulesViewModel : ObservableObject {
             }
             
         }
-        
     }
 
     func loadType(){
@@ -53,4 +52,5 @@ class SchedulesViewModel : ObservableObject {
             return x < y
         }
     }
+    
 }
