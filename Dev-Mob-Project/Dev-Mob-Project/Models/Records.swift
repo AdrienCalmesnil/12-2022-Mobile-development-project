@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
-struct Records: Codable {
+struct RecordsSchedule: Codable {
     let records: [Schedule]?
+}
+
+struct RecordsSpeaker: Codable {
+    let records: [Speaker]?
 }

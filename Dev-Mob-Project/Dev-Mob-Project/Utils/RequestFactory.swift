@@ -32,6 +32,7 @@ protocol RequestFactoryProtocol {
 }
 
 private let scheduleUrlStr = "https://api.airtable.com/v0/appLxCaCuYWnjaSKB/%F0%9F%93%86%20Schedule"
+private let speakerUrlStr  = "https://api.airtable.com/v0/appLxCaCuYWnjaSKB/%F0%9F%8E%A4%20Speakers"
 
 class RequestFactory: RequestFactoryProtocol {
     
@@ -69,8 +70,38 @@ class RequestFactory: RequestFactoryProtocol {
                         let decoder = JSONDecoder()
                         decoder.dateDecodingStrategy = .formatted(dateFormatter)
                         
-                        if let response = try? decoder.decode(Records.self, from: data) {
+                        if let response = try? decoder.decode(RecordsSchedule.self, from: data) {
                                 callback((nil, nil), response.records)
+                        }
+                        else {
+                            callback((CustomError.parsingError, "parsing error"), nil)
+                        }
+                    }
+                    else {
+                        callback((CustomError.statusCodeError, "status code: \(responseHttp.statusCode)"), nil)
+                    }
+                }
+            }
+            else {
+                callback((CustomError.requestError, error.debugDescription), nil)
+            }
+            
+        }
+        task.resume()
+    }
+    
+    func getSpeakerList(callback: @escaping ((errorType: CustomError?, errorMessage: String?), [Speaker]?) -> Void) {
+        let session = URLSession(configuration: .default)
+        let task = session.dataTask(with: createRequest(urlStr: speakerUrlStr, requestType: .get, params: nil)) {
+            (data, response, error) in
+            if let data = data, error == nil {
+                if let responseHttp = response as? HTTPURLResponse {
+                    if responseHttp.statusCode == 200 {
+                        
+                        let decoder = JSONDecoder()
+                        
+                        if let response = try? decoder.decode(RecordsSpeaker.self, from: data) {
+                            callback((nil, nil), response.records)
                         }
                         else {
                             callback((CustomError.parsingError, "parsing error"), nil)

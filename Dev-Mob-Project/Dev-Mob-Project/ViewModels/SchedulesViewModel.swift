@@ -41,7 +41,6 @@ class SchedulesViewModel : ObservableObject {
             }
             
         }
-        
     }
 
     func loadType(){
