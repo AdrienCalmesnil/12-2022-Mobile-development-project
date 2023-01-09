@@ -90,6 +90,7 @@
 		555DCE47296B273C00771235 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				55AF55492947657B0008878F /* ContentView.swift */,
 				555DCE48296B275400771235 /* DetailView.swift */,
 			);
 			path = Views;
@@ -124,7 +125,6 @@
 				55AF557B29478A880008878F /* ViewModels */,
 				55AF5573294779B50008878F /* Models */,
 				55AF55472947657B0008878F /* Dev_Mob_ProjectApp.swift */,
-				55AF55492947657B0008878F /* ContentView.swift */,
 				55AF554B2947657C0008878F /* Assets.xcassets */,
 				55AF554D2947657C0008878F /* Preview Content */,
 			);
