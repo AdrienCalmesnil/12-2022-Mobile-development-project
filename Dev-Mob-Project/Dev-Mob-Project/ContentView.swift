@@ -27,9 +27,10 @@ struct ContentView: View {
                 List
                 {
                     ForEach(scheduleViewModel.listSchedule) { l in
-                        NavigationLink(destination: DetailView(schedule: l)){
-                            if(selectedItem != "All"){
-                                if(selectedItem == l.fields.type!){
+                        
+                        if(selectedItem != "All"){
+                            if(selectedItem == l.fields.type!){
+                                NavigationLink(destination: DetailView(schedule: l)){
                                     HStack(alignment: .lastTextBaseline){
                                         Text(l.fields.activity!).padding()
                                         Spacer()
@@ -37,7 +38,9 @@ struct ContentView: View {
                                     }
                                 }
                             }
-                            else {
+                        }
+                        else {
+                            NavigationLink(destination: DetailView(schedule: l)){
                                 HStack(alignment: .lastTextBaseline){
                                     Text(l.fields.activity!).padding()
                                     Spacer()
