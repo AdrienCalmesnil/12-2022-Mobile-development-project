@@ -28,18 +28,7 @@ struct ContentView: View {
                 {
                     ForEach(scheduleViewModel.listSchedule) { l in
                         
-                        if(selectedItem != "All"){
-                            if(selectedItem == l.fields.type!){
-                                NavigationLink(destination: DetailView(schedule: l)){
-                                    HStack(alignment: .lastTextBaseline){
-                                        Text(l.fields.activity!).padding()
-                                        Spacer()
-                                        Text((l.fields.start!), style : .time)
-                                    }
-                                }
-                            }
-                        }
-                        else {
+                        if(selectedItem == "All" || selectedItem == l.fields.type){
                             NavigationLink(destination: DetailView(schedule: l)){
                                 HStack(alignment: .lastTextBaseline){
                                     Text(l.fields.activity!).padding()
