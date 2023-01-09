@@ -8,18 +8,25 @@
 import Foundation
 import UIKit
 
-struct Schedule: Codable, Identifiable {
+class Schedule: Codable, Identifiable, ObservableObject {
     let id: String
     let createdTime: Date?
-    let fields: Fields
+    let fields: FieldsSchedule
+    
+    init(id: String, createdTime: Date?, fields: FieldsSchedule){
+        self.id = id
+        self.createdTime = createdTime
+        self.fields = fields
+    }
 }
 
-struct Fields: Codable {
+struct FieldsSchedule: Codable {
     let end: Date?
     let start: Date?
     let activity: String?
     let type: String?
     let speakers: [String?]?
+    let notes: String?
     let location: String?
     enum CodingKeys: String, CodingKey {
         case end = "End"
@@ -27,6 +34,7 @@ struct Fields: Codable {
         case activity = "Activity"
         case type = "Type"
         case speakers = "Speaker(s)"
+        case notes = "Notes"
         case location = "Location"
     }
 }
