@@ -26,6 +26,7 @@ struct FieldsSchedule: Codable {
     let activity: String?
     let type: String?
     //let speakers: [String?]
+    let notes: String?
     let location: String?
     enum CodingKeys: String, CodingKey {
         case end = "End"
@@ -33,6 +34,7 @@ struct FieldsSchedule: Codable {
         case activity = "Activity"
         case type = "Type"
         //case speakers = "Speaker(s)"
+        case notes = "Notes"
         case location = "Location"
     }
 }
